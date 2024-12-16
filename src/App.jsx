@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Entry from "./landing/components/Entry";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  return <Entry />;
+};
 
-export default App
+export default App;
