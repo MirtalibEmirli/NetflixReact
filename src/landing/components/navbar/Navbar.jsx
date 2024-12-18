@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div
       id="navbar"
-      className="relative flex z-40 bg-transparent w-full space-x-96  items-center px-8 py-4"
+      className="relative flex z-40 bg-transparent w-full  items-center justify-between px-32 py-4 "
     >
       <div className="flex items-center">
       <Netflixlogo />
