@@ -15,9 +15,9 @@ const MailBox = () => {
         <input name="mail"  value={mail}  placeholder="Email" type="email" className="
         z-10 w-[65%] bg-transparent p-4 rounded-md 
         border-[1px]  border-zinc-400" />
-        <button className="flex  bg-red-600 w-[35%] text-center font-bold text-2xl items-center justify-center rounded-md" >
+        <button className="flex  bg-red-600 w-[35%] gap-2 text-center font-bold text-2xl items-center justify-center rounded-md" >
          Get Started
-         <FaChevronRight className="text-xl mt-1  "/>
+         <FaChevronRight className="text-xl mt-1 font-thin  "/>
       </button>
       </div>
 
