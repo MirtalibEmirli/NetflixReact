@@ -1,29 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGlobe } from "react-icons/fa";
+import CustomSelect from "../CustomSelect";
 const SignInNav = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const languages = ["English", "Russian"];
   return (
     <>
-      {/* buttons sign in and language */}
-
       <div className="   max-h-10 gap-4 justify-center  flex items-center ">
-       
-       
-        <button className="flex items-center bg-black space-x-1 max-h-8
-         text-white border border-gray-400 focus:border-2 focus:border-white
-          rounded-md px-4 py-2 cursor-pointer "
-        >
-     <FaGlobe className="decoration-white w-4 h-4 text-white"/>
-          <select
-            className="bg-black text-white outline-none appearance-none cursor-pointer"
-            name=""
-            id=""
-          >     
-            <option value="en">English</option>
-            <option value="az">Azerbaycan</option>
-          </select>
-        </button>
+        <CustomSelect
+          selectedOption={selectedLanguage}
+          setSelectedOption ={setSelectedLanguage}
+          options={languages}
+          logo={"https://www.svgrepo.com/show/348179/language.svg"}
+        ></CustomSelect>
 
-        <button className="border-transparent rounded-md max-h-8 bg-red-600 px-3 py-1  ">
+        <button className="border-transparent hover:bg-[#ce272ffb] duration-200 rounded-md h-9 text-white text-xl bg-[rgb(229,9,20)] 
+        px-3 py-1  ">
           Sign In{" "}
         </button>
       </div>

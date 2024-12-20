@@ -12,7 +12,7 @@ const Navbar = () => {
       <Netflixlogo />
       </div>
       
-      <div className="flex items-center"><SignInNav /> <p></p></div>
+      <div className="flex items-center"><SignInNav /> </div>
     </div>
   );
 };
