@@ -15,20 +15,24 @@ const CustomSelect = ({ selectedOption, setSelectedOption, options, logo }) => {
 
       {/* Seçim üçün görünməz sahə */}
       <select
-        onChange={(e) => setSelectedOption(e.target.value)}
-        value={selectedOption}
+        onChange={(e)=>{
+          const selectedItem=options.find(
+            (item)=> item.value===e.target.value
+          )
+          setSelectedOption(selectedItem)
+        }}         
         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer focus:outline-none"
       >
         {options.map((item, index) => (
-          <option key={index} className="text-xl bg-black" value={item}>
-            {item}
+          <option key={item.value} className="text-xl bg-black" value={item.value}>
+            {item.title}
           </option>
         ))}
       </select>
 
       
       <p className="text-white text-xl font-sans flex-1 text-center">
-        {selectedOption}
+        {selectedOption.title}
       </p>
 
      

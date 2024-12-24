@@ -5,11 +5,15 @@ import { BrowserRouter } from "react-router";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navbar/Navbar";
 import Trending from "./components/Trending";
+import ReasonstoJoin from "./components/ReasonstoJoin";
+import Ellips from "./components/Ellips";
 const Landing = () => {
   return (
     <>
       <Entry />
+     
       <Trending />
+      <ReasonstoJoin/>
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
@@ -28,3 +32,25 @@ const Landing = () => {
 };
 
 export default Landing;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

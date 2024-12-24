@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        netflix: ['"Netflix Sans"', '"Helvetica Neue"', '"Segoe UI"', 'Roboto', 'Ubuntu', 'sans-serif'],
+        netflix: ['"Netflix Sans"', '"Helvetica Neue"', '"Segoe UI"', 'Roboto'],
+        roboto: [ 'Roboto',"serif"],
+        poppins:['Poppins','sans-serif']
       },
       colors: {
         netflixRed: '#E50914', // Netflix qırmızı rəngi

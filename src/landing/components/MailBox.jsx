@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
 const MailBox = () => {
+  const {t} = useTranslation()
   const [mail, setMail] = useState("");
   const [inputStatus, setInputStatus] = useState(null);
 
@@ -16,20 +17,20 @@ const MailBox = () => {
   return (
     <div className="w-[540px] mx-auto">
       <p className="w-full mb-4 text-center">
-        Ready to watch? Enter your email to create or restart your membership.
+        {t('readyToWatch')}
       </p>
 
       <div className="flex w-full gap-3">
         <input
           onChange={(e) => {
             setMail(e.target.value);
-            setInputStatus(null); // Yeni dəyər daxil edildikdə statusu sıfırlayır
+            setInputStatus(null);  
           }}
           value={mail}
           type="email"
           name="mail"
           id="mail"
-          placeholder="Enter your email"
+          placeholder={t('placeholderEmail')}
           className={`z-10 w-[65%] bg-transparent p-4 rounded-md border-[2px]  
              ${
                inputStatus === "error"
@@ -43,7 +44,7 @@ const MailBox = () => {
           onClick={handleGetStarted}
           className="flex bg-red-600 w-[35%] gap-2 text-center font-bold text-2xl items-center justify-center rounded-md"
         >
-          Get Started
+         {t('callToAction')}
           <FaChevronRight className="text-xl mt-1 font-thin" />
         </button>
       </div>
@@ -52,12 +53,12 @@ const MailBox = () => {
       <div className="mt-2 text-left">
         {inputStatus === "error" && (
           <p className="text-red-500 text-sm mt-2">
-            Please enter a valid email address.
+            {t('emailError')}
           </p>
         )}
         {inputStatus === "success" && (
           <p className="text-green-500 text-sm mt-2">
-            Email is valid! Proceeding...
+            {t('emailSuccess')}
           </p>
         )}
       </div>
