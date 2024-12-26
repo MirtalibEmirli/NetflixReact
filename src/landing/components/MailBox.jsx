@@ -15,8 +15,8 @@ const MailBox = () => {
   };
 
   return (
-    <div className="w-[540px] mx-auto">
-      <p className="w-full mb-4 text-center">
+    <div className="w-full mx-auto">
+      <p className="w-full mb-4 text-center  text-lg">
         {t('readyToWatch')}
       </p>
 

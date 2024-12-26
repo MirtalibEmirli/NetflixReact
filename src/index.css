@@ -1,10 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply font-netflix bg-black text-white;
+}
+
+.foot_main{
+  color:  rgb(161, 161, 161);
+  margin-top: 70px;
+  
+  display: flex;
+  width: 60%;
+  flex-direction: row;
+  height:  300px;
+  font-size: 13px;
+
+}
+.foot_div1{
+  margin-left: 10px;
+ 
+  list-style-type: none;
+  
+}
+.foot_ul1{
+  width: 200px;
+  text-decoration: none;
+  color: rgb(161, 161, 161);;
+  
+  list-style-type: none;
+  margin-top:  50px;
+  margin-left: 78px;
+  padding: 20px;
+  
+}
+.foot_ul2{
+  width: 200px;
+ 
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 20px;
+  
+  
+}
+.foot_ul3{
+  width: 200px;
+  
+  list-style-type: none;
+  margin-top:  50px;
+  padding: 20px;
+  
+  
+}
+.foot_ul4{
+  width: 200px;
+  
+  
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 20px;
+}
+.content_li{
+  padding: 8px;
+font-family: 'roboto';
+  text-decoration: underline;
+}
+.links{
+  text-decoration: none;
+  color: rgb(161, 161, 161);;
+}
+.links:hover{
+  text-decoration: underline;
 }
 /* 
 p,span{

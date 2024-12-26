@@ -14,10 +14,10 @@ const CustomSelect = ({ selectedOption, setSelectedOption, options, logo }) => {
       )}
 
       {/* Seçim üçün görünməz sahə */}
-      <select
+      <select 
         onChange={(e)=>{
           const selectedItem=options.find(
-            (item)=> item.value===e.target.value
+            (item)=> item.value=== e.target.value.trim()
           )
           setSelectedOption(selectedItem)
         }}         
