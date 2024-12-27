@@ -7,6 +7,32 @@
 body {
   @apply font-netflix bg-black text-white;
 }
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .foot_main{
   color:  rgb(161, 161, 161);

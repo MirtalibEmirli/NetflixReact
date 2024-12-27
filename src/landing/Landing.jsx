@@ -31,7 +31,7 @@ const Landing = () => {
 <ReasonstoJoin />
 <FrequentlyAsked/>
  
-<div className="  items-center justify-center w-full    px-10 md:px-20 lg:px-72
+<div className="  items-center justify-center w-[700px]  mx-auto h-16
 ">
   <MailBox/>
  </div>

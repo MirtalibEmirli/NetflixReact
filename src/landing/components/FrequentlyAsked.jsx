@@ -2,6 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import X_icon from "../../assets/netflix/X_icon.svg";
 import FrItem from "./FrItem";
+
+
+
 import { useState } from "react";
 const FrequentlyAsked = () => {
   const[openItem,setOpenItem] = useState(null)
