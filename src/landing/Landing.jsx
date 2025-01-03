@@ -11,6 +11,7 @@ import { div } from "motion/react-client";
 import FrequentlyAsked from "./components/FrequentlyAsked"
 import MailBox from "./components/MailBox";
 import Footer from "./components/Footer";
+
 const Landing = () => {
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
@@ -23,6 +24,8 @@ const Landing = () => {
     }
   },[])
   return (
+ 
+  
   <div id="landing" className="w-full relative ">
     
     <Entry />
@@ -38,6 +41,7 @@ const Landing = () => {
  {/* bunu nece uzadaq? */}
 
  <Footer/>
+
 <ToastContainer
   position="bottom-center"
   autoClose={5000}
@@ -52,7 +56,7 @@ const Landing = () => {
   transition={Bounce}
 />
   </div>
-    
+     
   );
 };
 

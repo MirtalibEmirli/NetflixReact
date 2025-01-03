@@ -20,7 +20,7 @@ body {
 
 }
 .foot_div1{
-  margin-left: 10px;
+ 
  
   list-style-type: none;
   
@@ -70,6 +70,8 @@ font-family: 'roboto';
 .links{
   text-decoration: none;
   color: rgb(161, 161, 161);;
+  font-size: 15px /* 18px */;
+  line-height: 15px /* 28px */;
 }
 .links:hover{
   text-decoration: underline;

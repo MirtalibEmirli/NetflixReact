@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import ReasonCard from "./ReasonCard";
-import dwIcon from "../../assets/netflix/dw.svg";
-import kk from "../../assets/netflix/kk.svg";
-import deskt from "../../assets/netflix/SVG.svg";
-import tt from "../../assets/netflix/tt.svg";
+import dwIcon from "icons/dw.svg";
+import kk from "icons/kk.svg";
+import deskt from "icons/SVG.svg";
+import tt from "icons/tt.svg";
 
 const ReasonstoJoin = () => {
   const { t } = useTranslation();

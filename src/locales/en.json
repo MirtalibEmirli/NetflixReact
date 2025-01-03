@@ -40,5 +40,22 @@
     "whyAmISeeingThisLanguage": "Why am I seeing this language?",
     "whyAmISeeingThisLanguageDescription": "Your browser preferences determine the language shown here."
  
-  
-}
+,      "question_contact_us": "Question? Contact us.",
+      "faq": "FAQ",
+      "investor_relations": "Investor Relations",
+      "privacy": "Privacy",
+      "speed_test": "Speed Test",
+      "help_centre": "Help Centre",
+      "jobs": "Jobs",
+      "cookie_preferences": "Cookie Preferences",
+      "legal_notices": "Legal Notices",
+      "account": "Account",
+      "ways_to_watch": "Ways to Watch",
+      "corporate_information": "Corporate Information",
+      "netflix_originals": "Netflix Originals",
+      "media_centre": "Media Centre",
+      "terms_of_use": "Terms of Use",
+      "contact_us": "Contact Us",
+      "netflix_azerbaijan": "Netflix Azerbaijan"
+    }
+    

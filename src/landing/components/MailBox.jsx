@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 const MailBox = () => {
+  const navigate = useNavigate();
   const {t} = useTranslation()
   const [mail, setMail] = useState("");
   const [inputStatus, setInputStatus] = useState(null);
@@ -10,7 +12,10 @@ const MailBox = () => {
     if (!mail || !mail.includes("@") || !mail.includes(".")) {
       setInputStatus("error");
     } else {
+
       setInputStatus("success");
+      navigate('/register',{state:{email:mail}})
+
     }
   };
 
@@ -26,7 +31,7 @@ const MailBox = () => {
             setMail(e.target.value);
             setInputStatus(null);  
           }}
-          value={mail}
+          defaultValue={mail}
           type="email"
           name="mail"
           id="mail"
