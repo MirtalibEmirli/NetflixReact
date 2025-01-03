@@ -15,8 +15,7 @@ const Entry = () => {
       <MiddleEntry  />
 
 
-
-      {/* ///////// qovs*/}
+ 
     
     </section>
   );

@@ -4,6 +4,7 @@ import CustomSelect from "./CustomSelect";
 import { useTranslation } from "react-i18next";
 import Modal from "./Modal";
 import Ellips from "./Ellips";
+import ScrollButton from "./ScrollButton";
 const Trending = ({ scrollY }) => {
   const [data, setData] = useState([]);
   const { t, i18n } = useTranslation();
@@ -61,7 +62,7 @@ const Trending = ({ scrollY }) => {
   return (
     <>
       <Ellips />
-      <div className="w-full py-20 relative z-10  px-10 md:px-20 lg:px-40 -mt-16 -mb-4">
+      <div className="w-full py-20 relative z-10  px-10 md:px-40 lg:px-40 -mt-16 -mb-4">
         <h3 className="text-white text-2xl font-semibold mb-4">
           {t("trending_now")}
         </h3>
@@ -72,19 +73,10 @@ const Trending = ({ scrollY }) => {
         />
 
         <div className="w-full flex gap-6 overflow-y-hidden 
-         overflow-x-scroll   items-center py-5 pl-7 relative">
-          <button
-            onClick={() =>
-              document
-                .querySelector(".movie-card-container")
-                .scrollBy({ left: 200, behavior: "smooth" })
-            }
-            className="hidden md:flex items-center justify-center bg-zinc-900 h-28 
-            hover:bg-zinc-800  duration-200  p-2 rounded-full"
-          >
-            &lt;
-          </button>
-          <div className="movie-card-container flex gap-12">
+         overflow-x-scroll  no-scrollbar items-center py-5 pl-7 relative">
+        <ScrollButton direction="left"/>
+
+          <div id="movie-card-container" className=" flex gap-12">
             {data.map((item, index) => (
               <MovieCard
                 key={item.id || index}
@@ -94,17 +86,8 @@ const Trending = ({ scrollY }) => {
               />
             ))}
           </div>
-          <button
-            className="hidden md:flex items-center justify-center
-             hover:bg-zinc-800  duration-200  bg-zinc-900 h-28 p-2 rounded-full"
-            onClick={() =>
-              document
-                .querySelector(".movie-card-container")
-                .scrollBy({ left: 200, behavior: "smooth" })
-            }
-          >
-            &gt;
-          </button>
+          <ScrollButton direction="right"/>
+
         </div>
         {modalOpen && (
           <Modal

@@ -1,5 +1,4 @@
 import React from 'react'
-
 const FormItem = ({label,name,type,value,placeholder,handleInputChange,inputStyle }) => {
   return (
     <div className='flex flex-col'>
