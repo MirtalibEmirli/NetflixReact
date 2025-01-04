@@ -15,7 +15,7 @@ const Modal = ({ handleModalClose, data, scrollY }) => {
     <div
       style={{ top: scrollY }}
       onClick={handleModalClose}
-      className="absolute  w-screen h-screen bg-black/50 items-center justify-center flex left-0 z-50"
+      className="absolute  w-screen h-screen bg-black/50 items-center justify-center flex left-0 z-10"
     >
       <motion.div
         initial={{ opacity: 0 }}
