@@ -37,9 +37,9 @@ const ReasonstoJoin = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 md:px-20 lg:px-40  mt-0  w-full"> 
+    <div className=" mx-auto px-6 md:px-20  lg:px-36  mt-0  w-full"> 
     {/* burda mb-16 var onu nece duzeldim */}
-      <h2 className="text-white font-bold text-[22px] mb-4 ml-0  ">{t("moreReasonsToJoin")}</h2>
+      <h2 className="text-white font-bold text-[22px]  mb-4 ml-0  ">{t("moreReasonsToJoin")}</h2>
       <div className="flex gap-4 ">
         {reasons.map((item) => (
           <ReasonCard key={item.id} reason={item} />

@@ -15,7 +15,7 @@ const ScrollButton = ({ direction }) => {
       }}
       className={`flex items-center justify-center bg-zinc-900 h-28 z-10 
             hover:bg-zinc-800 duration-200 p-2 rounded-full absolute 
-            ${toRight ? "right-0" : "left-0"} top-1/2 transform -translate-y-1/2`}
+            ${toRight ? "-right-6" : "-left-2"} top-1/2 transform -translate-y-1/2`}
     >
       {toRight ? <FaChevronRight /> : <FaChevronLeft />}
     </button>

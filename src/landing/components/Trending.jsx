@@ -58,7 +58,7 @@ const Trending = ({ scrollY }) => {
   return (
     <>
       <Ellips />
-      <div className="w-full py-20 relative z-10 px-10 md:px-40 lg:px-36 -mt-16 -mb-4">
+      <div className="w-full py-20 relative z-10 px-10 md:px-40 lg:px-36 -mt-16 -mb-4 overflow-y-hidden   no-scrollbar   overflow-x-scroll">
         <h3 className="text-white text-2xl font-semibold mb-4">
           {t("trending_now")}
         </h3>
@@ -68,13 +68,13 @@ const Trending = ({ scrollY }) => {
           options={options}
         />
         <div
-          className="w-full flex gap-6 overflow-y-hidden z-16
-          overflow-x-scroll no-scrollbar items-center py-5 pl-7 relative"
+          className="w-full flex gap-6  z-16   
+      items-center py-5 pl-7 relative"
         >
-         <ScrollButton direction="left" />
+         <ScrollButton   direction="left" />
      
 
-          <div id="movie-card-container" className="flex gap-12     no-scrollbar   overflow-x-scroll">
+          <div id="movie-card-container" className="flex gap-12 overflow-y-hidden   no-scrollbar   overflow-x-scroll">
             {data.map((item, index) => (
               <MovieCard
                 key={item.id || index}
@@ -90,10 +90,7 @@ const Trending = ({ scrollY }) => {
           <Modal
             scrollY={scrollY}
             data={selectedItem}
-            handleModalClose={() => {
-              setModalOpen(false);
-              setSelectedItem(null);
-            }}
+            handleModalClose={handleModalClose}
           />
         )}
       </div>

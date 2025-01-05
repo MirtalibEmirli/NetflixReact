@@ -26,7 +26,7 @@ const Landing = () => {
   return (
  
   
-  <div id="landing" className="w-full relative ">
+  <div id="landing" className="w-full relative overflow-y-hidden   no-scrollbar   overflow-x-scroll ">
     
     <Entry />
 

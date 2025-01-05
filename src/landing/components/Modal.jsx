@@ -17,10 +17,10 @@ const Modal = ({ handleModalClose, data, scrollY }) => {
       onClick={handleModalClose}
       className="absolute  w-screen h-screen bg-black/50 items-center justify-center flex left-0 z-10"
     >
-      <motion.div
+     <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration:1.5,ease:"easeIn" } }}
-      />
+      > 
       <div className=" max-h-[700px] max-w-[680px] border-px border-zinc-300 rounded-xl bg-zinc-900
         relative">
         <button
@@ -67,7 +67,7 @@ const Modal = ({ handleModalClose, data, scrollY }) => {
           </button>
         </div>
       </div>
-      <motion.div />
+      </motion.div >
     </div>,
 
     document.getElementById("landing")
