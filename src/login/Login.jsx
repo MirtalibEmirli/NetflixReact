@@ -5,10 +5,12 @@ import { useNavigate } from "react-router";
 import { style } from "motion/react-client";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router";
+import { themeStore } from "../common/Store";
 const Login = () => {
+  
   const location = useLocation();
   const email = location.state?.email || "";
-  // const {addAccesToken} = useStore(themeStore);
+  const {addAccessToken} = useStore(themeStore);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const login = async () => {
@@ -16,14 +18,15 @@ const Login = () => {
       const response = await fetch("http://localhost:5001/api/v1/auth/login", {
         method: "POST",
         headers: {
-          Accept: "appliacation/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(email?{...formData,email:email}:formData),
       });
       const data = await response.json();
+      console.log(data)
       if (response.ok) {
-        toast.success("User Succesfully registered", {
+        toast.success(data.message, {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -34,10 +37,11 @@ const Login = () => {
           draggable: true,
           theme: "dark",
         });
+        addAccessToken(data.token)
+        navigate("/home");
 
-        // addAccesToken(data.token)
       } else {
-        toast.error("🦄 Wow so easy!", {
+        toast.error(data.message, {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -75,7 +79,7 @@ const Login = () => {
     {
       title: "Sign In",
       style: "bg-[#E50914] text-white font-medium py-3 rounded-[4px] w-full",
-      action: login,
+      action:() =>{login()},
     },
     {
       title: "New on Netflix? Sign Up Now",

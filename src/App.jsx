@@ -5,19 +5,16 @@ import Login from "./login/Login";
 import Register from "./Register/Register";
 import { useStore } from "zustand";
 import HomePage from "./homepage/HomePage";
-import Home from "./homepage/components/Home"
+ 
 import NotFound from "./common/NotFound";
-// import {themeStore}   
+import { themeStore } from "./common/Store";   
 const App = () => {
-  // const{token}= useStore(themeStore)
-  //bunu sorus   
-  return (
+  const{token}= useStore(themeStore)
+   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        {/* {token&& <Route  path="/home" element={<HomePage/>}/>} */}
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/homep" element={<Home />} />
+        {token&& <Route  path="/home" element={<HomePage/>}/>}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/movie" element={<Movies />} />  */} 

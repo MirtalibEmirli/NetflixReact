@@ -18,7 +18,7 @@ const Shows = () => {
   };
   useEffect(() => {
     getShows();
-  });
+  },[]);
   return (
     <motion.div
         initial={{ opacity: 0 }}

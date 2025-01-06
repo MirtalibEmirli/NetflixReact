@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import CustomSelect from "../CustomSelect";
+import tr from "../../../assets/netflix/LanguageIcon.svg"
 import { useTranslation } from "react-i18next";
 const SignInNav = () => {
   const navigate = useNavigate()
   const { i18n } = useTranslation();
+
   const {t} = useTranslation();
+
   const [selectedLanguage, setSelectedLanguage] = useState({
     title: "English",
     value: "en",
@@ -19,8 +22,10 @@ const SignInNav = () => {
     if (selectedLanguage && selectedLanguage.value) {
       i18n.changeLanguage(selectedLanguage.value);
     }  },[selectedLanguage,i18n])
+   
     const handleSignInClick = ()=>{
       navigate("/login")
+      
     }
   return (
     <>
@@ -29,7 +34,7 @@ const SignInNav = () => {
           selectedOption={selectedLanguage}
           setSelectedOption={setSelectedLanguage}
           options={languages}
-          logo={"https://www.svgrepo.com/show/348179/language.svg"}
+          logo={tr}
         ></CustomSelect>
 
         <button onClick={handleSignInClick}

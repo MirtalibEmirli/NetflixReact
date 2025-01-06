@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { useStore } from "zustand";
+// import { useStore } from "zustand";
 import Form from "common/Form";
 import { useNavigate } from "react-router";
 import { style } from "motion/react-client";
 import { useLocation } from "react-router";
 import { toast } from "react-toastify";
 const Register = () => {
-  // const {addAccesToken} = useStore(themeStore);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   const email = location.state?.email || "";
   const [formData, setFormData] = useState({});
   const signup = async () => {
@@ -16,12 +15,14 @@ const Register = () => {
       const response = await fetch("http://localhost:5001/api/v1/auth/signup", {
         method: "POST",
         headers: {
-          Accept: "appliacation/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(email? {...formData,email:email}:formData) ,
       });
       const data = await response.json();
+   
+
       if (response.ok) {
         toast.success("User Succesfully registered", {
           position: "bottom-center",
@@ -35,7 +36,8 @@ const Register = () => {
           theme: "dark",
         });
         navigate("/login", { state: { email: formData.email } });
-      } else {
+      } 
+      else {
         toast.error(data.message, {
           position: "bottom-center",
           autoClose: 5000,
@@ -55,7 +57,7 @@ const Register = () => {
   const formItems = [
     {
       label: "",
-      name: "UserName",
+      name: "username",
       type: "text",
       placeholder: "UserName",
       inputStyle:
@@ -68,7 +70,7 @@ const Register = () => {
       placeholder: "Email",
       inputStyle:
         "p-4 bg-transparent border-[1px] border-zinc-400 rounded-[4px] text-white",
-        ...(email?{value:email}:{})
+      ...(email ? { value: email } : {}),
     },
 
     {
