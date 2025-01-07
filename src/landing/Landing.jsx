@@ -1,16 +1,17 @@
 import React from "react";
 import { ToastContainer, Bounce } from "react-toastify";
 import Entry from "./components/Entry";
-// import { BrowserRouter } from "react-router";
+
 import "react-toastify/dist/ReactToastify.css";
-// import Navbar from "./components/navbar/Navbar";
-import Trending from "./components/Trending";
+import { useStore } from "zustand";
+import { themeStore } from "common/Store";
 import ReasonstoJoin from "./components/ReasonstoJoin";
 import { useEffect, useState } from "react";
 import FrequentlyAsked from "./components/FrequentlyAsked";
 import MailBox from "./components/MailBox";
 import Footer from "./components/Footer";
-
+import Trending from "./components/Trending";
+import { useNavigate } from "react-router";
 const Landing = () => {
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
@@ -22,6 +23,16 @@ const Landing = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  //biz burda token i elave eddik yeni global store ede oldugu ucun token
+  //onu gotrduk ve yyoxladiqki eyer varsa landinge gelende de home a gonder
+
+  const { token } = useStore(themeStore);
+  const navigate = useNavigate();
+  console.log(token);
+  useEffect(() => {
+    token && navigate("/home") && token != "";
+  }, [token]);
+      
   return (
     <div
       id="landing"
@@ -34,12 +45,11 @@ const Landing = () => {
       <FrequentlyAsked />
 
       <div
-        className="  items-center justify-center w-[700px]  mx-auto h-16
+        className="  items-center justify-center w-[850px]  mx-auto h-16
 "
       >
         <MailBox />
       </div>
-      {/* bunu nece uzadaq? */}
 
       <Footer />
 

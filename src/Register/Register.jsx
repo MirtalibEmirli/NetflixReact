@@ -1,8 +1,6 @@
 import { useState } from "react";
-// import { useStore } from "zustand";
 import Form from "common/Form";
 import { useNavigate } from "react-router";
-import { style } from "motion/react-client";
 import { useLocation } from "react-router";
 import { toast } from "react-toastify";
 const Register = () => {
@@ -11,6 +9,7 @@ const Register = () => {
   const email = location.state?.email || "";
   const [formData, setFormData] = useState({});
   const signup = async () => {
+    
     try {
       const response = await fetch("http://localhost:5001/api/v1/auth/signup", {
         method: "POST",
@@ -21,7 +20,7 @@ const Register = () => {
         body: JSON.stringify(email? {...formData,email:email}:formData) ,
       });
       const data = await response.json();
-   
+   console.log(data)
 
       if (response.ok) {
         toast.success("User Succesfully registered", {

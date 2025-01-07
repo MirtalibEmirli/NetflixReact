@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { style } from "motion/react-client";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router";
-import { themeStore } from "../common/Store";
+import { themeStore } from "common/Store";
 const Login = () => {
   
   const location = useLocation();
@@ -24,7 +24,7 @@ const Login = () => {
         body: JSON.stringify(email?{...formData,email:email}:formData),
       });
       const data = await response.json();
-      console.log(data)
+   
       if (response.ok) {
         toast.success(data.message, {
           position: "bottom-center",
@@ -41,7 +41,7 @@ const Login = () => {
         navigate("/home");
 
       } else {
-        toast.error(data.message, {
+        toast.error("?", {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,

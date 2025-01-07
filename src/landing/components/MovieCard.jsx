@@ -9,6 +9,7 @@ const MovieCard = ({item,index,setSelectedItem}) => {
     <img className='w-full h-full object-cover rounded-lg' src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt="" />
     </div>
   )
+  
 }
 
 export default MovieCard

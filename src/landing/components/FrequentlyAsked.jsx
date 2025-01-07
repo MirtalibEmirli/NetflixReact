@@ -3,11 +3,9 @@ import { useTranslation } from "react-i18next";
 import X_icon from "icons/X_icon.svg";
 import FrItem from "./FrItem";
 
-
-
 import { useState } from "react";
 const FrequentlyAsked = () => {
-  const[openItem,setOpenItem] = useState(null)
+  const [openItem, setOpenItem] = useState(null);
   const { t } = useTranslation();
   const items = [
     {
@@ -47,18 +45,22 @@ const FrequentlyAsked = () => {
     },
   ];
 
-
   return (
-    <div className="px-10 md:px-20 lg:px-40 w-full mt-[64px] mb-[70px] ">
+    <div className="px-10 md:px-20 lg:px-36 w-full mt-[64px] mb-[70px] ">
       <h2 className="text-white text-2xl font-semibold mb-4">
         {t("FrequentlyAsked")}
       </h2>
 
-   <div className="flex flex-col gap-[8px]">
-   {items.map((item ) => (
-        <FrItem   item={item}  openItem={openItem}  setOpenItem={setOpenItem}/>
-      ))}
-   </div>
+      <div className="flex flex-col gap-[8px]">
+        {items.map((item, itemindex) => (
+          <FrItem
+            key={itemindex}
+            item={item}
+            openItem={openItem}
+            setOpenItem={setOpenItem}
+          />
+        ))}
+      </div>
     </div>
   );
 };

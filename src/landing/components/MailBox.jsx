@@ -36,7 +36,7 @@ const MailBox = () => {
           name="mail"
           id="mail"
           placeholder={t('placeholderEmail')}
-          className={`z-10 w-[65%] bg-transparent p-4 rounded-md border-[2px]  
+          className={`z-10 w-[65%] bg-zinc-950 p-4 rounded-md border-[2px]  
              ${
                inputStatus === "error"
                  ? "border-red-500"

@@ -18,7 +18,7 @@ const FrItem = ({ item, openItem, setOpenItem }) => {
         <h3 className="text-[24px] text-white">{item.title}</h3>
         <img src={icon} className={`${itemOpen && "rotate-45"}`} alt="" />
       </div>
-      {/* animasiyani gondermek lazimdir */}
+   
 
       { itemOpen&& (
         <div className="bg-[#2D2D2D]  px-[24px] py-[10px] m-0 items-center justify-center  ">
