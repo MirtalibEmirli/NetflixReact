@@ -2,12 +2,11 @@ import React from "react";
 import N from "../../assets/netflix/image 5.png";
 import top10 from "../../assets/netflix/Top10.svg";
 import info from "../../assets/netflix/Info btn.png";
-import Polygon from "../../assets/netflix/Polygon.png";
+import Polygon from "../../assets/netflix/Polygon.png"; 
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router";
 const Home = ({ visibleMovie = {} }) => {
-//   console.log("navigate state:", { id: visibleMovie.id, type: visibleMovie.media_type });
-// console.log("useLocation().state:", location?.state);
+
 
   const { backdrop_path, title } = visibleMovie;
   const navigate = useNavigate();

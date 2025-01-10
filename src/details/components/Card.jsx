@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 const Card = ({ item, type }) => {
   const navigate = useNavigate();
   return (
-    <button
+    <button className="hover:scale-110 transition duration-150 ease-in"
       onClick={() => {
         navigate("/details", {
           state: {
@@ -14,10 +14,11 @@ const Card = ({ item, type }) => {
       }}
     >
       <img
-        className="min-w-[180px] h-[250px] hover-scale-110 transition duration-150 ease-in"
+        className="sm:min-w-[180px] sm:w-[120px] h-[20px] sm:h-[250px]"
         src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
         alt=""
       />
+      <p className="text-white ">{type === "tv" ? item.name : item.title}</p>
     </button>
   );
 };

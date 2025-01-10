@@ -4,7 +4,7 @@ import { FaChevronLeft } from "react-icons/fa";
 const ScrollButton = ({ direction }) => {
   const toRight = direction === "right";
   return (
-    <button
+    <button 
       onClick={() => {
         const container = document.querySelector("#movie-card-container");
         if (container) {
