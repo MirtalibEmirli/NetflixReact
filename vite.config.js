@@ -13,4 +13,11 @@ export default defineConfig({
       components:"/src/landing/components"
     },
   },
+  build: {
+    target: "esnext",
+    outDir: "dist",
+    rollupOptions: {
+      output: { format: "es", entryFileNames: "[name].js" },
+    },
+  },
 });
